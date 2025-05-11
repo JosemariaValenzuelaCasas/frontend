@@ -1,33 +1,33 @@
 .custom-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff; /* Fondo blanco */ /* Borde superior azul */
-    color: #000000; /* Texto negro */
-  }
-  
-  .spacer {
-    flex: 1 1 auto;
-  }
-  
-  .nav-links a {
-    margin: 0 15px;
-    color: #000000; /* Texto negro para los enlaces */
-    text-decoration: none; /* Sin subrayado */
-  }
-  
-  .nav-links a:hover {
-    color: #333333; /* Color más oscuro al pasar el ratón */
-  }
-  
-  button[mat-stroked-button] {
-    background-color: #2c2c2c; /* Fondo negro para el botón */
-    color: #ffffff; /* Texto blanco */
-    border: none;
-  }
-  .cerrarSesion{
-    border-radius: 10px; /* Sin borde adicional */
-  }
-  button[mat-stroked-button]:hover {
-    background-color: #333333; /* Color más oscuro al pasar el ratón */
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; 
+  color: #000000; 
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #000000;
+  text-decoration: none; 
+}
+
+.nav-links a:hover {
+  color: #333333; 
+}
+
+button[mat-stroked-button] {
+  background-color: #2c2c2c; 
+  color: #ffffff; 
+  border: none;
+}
+.cerrarSesion {
+  border-radius: 10px; 
+}
+button[mat-stroked-button]:hover {
+  background-color: #333333; 
+}

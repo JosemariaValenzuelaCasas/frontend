@@ -1,49 +1,47 @@
 ::ng-deep body {
-    background-color: #F6F7F1 !important;
+  background-color: #f6f7f1 !important;
 }
-  
-.titulo{
-    color: #74685C;
-    padding-left: 40px;
+
+.titulo {
+  color: #74685c;
+  padding-left: 40px;
 }
 .custom-table {
-    width: 100%;
-    border-spacing: 10px;
-    border-collapse: separate;
-    background-color: transparent;
-  }
-  
-  // Aplica a celdas normales
-  .custom-table td {
-    background-color: white;
-    border: 2px solid #caa56a;  // Borde remarcado
-    border-radius: 30px;
-    padding: 10px 14px;
-    text-align: center;
-    font-weight: bold;
-    color: #5b3b1b;
-  }
-  
-  // Aplica a encabezados
-  .custom-table th {
-    background-color: #C6B087;
-    border: 2px solid #caa56a;  // Borde remarcado igual
-    border-radius: 30px;
-    padding: 10px 14px;
-    text-align: center;
-    font-weight: bold;
-    color: #5b3b1b;
-  }
-  
-  // Elimina cualquier fondo de Material
-  ::ng-deep .mat-table {
-    background-color: white !important;
-    box-shadow: none !important;
-  }
-  
-  // También elimina sombra de filas si aplica
-  ::ng-deep .mat-row,
-  ::ng-deep .mat-header-row {
-    box-shadow: none !important;
-  }
-  
+  width: 100%;
+  border-spacing: 10px;
+  border-collapse: separate;
+  background-color: transparent;
+}
+
+
+.custom-table td {
+  background-color: white;
+  border: 2px solid #caa56a; 
+  border-radius: 30px;
+  padding: 10px 14px;
+  text-align: center;
+  font-weight: bold;
+  color: #5b3b1b;
+}
+
+.custom-table th {
+  background-color: #c6b087;
+  border: 2px solid #caa56a; 
+  border-radius: 30px;
+  padding: 10px 14px;
+  text-align: center;
+  font-weight: bold;
+  color: #5b3b1b;
+}
+
+
+::ng-deep .mat-table {
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+
+::ng-deep .mat-row,
+::ng-deep .mat-header-row {
+  box-shadow: none !important;
+}
