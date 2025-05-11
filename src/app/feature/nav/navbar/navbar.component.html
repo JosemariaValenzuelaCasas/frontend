@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<mat-toolbar class="custom-toolbar">
+    <!-- Logo -->
+    <span>
+      <img src="logo2.png" alt="Logo" style="height: 40px;">
+    </span>
+  
+    <!-- Espaciador para centrar los enlaces -->
+    <span class="spacer"></span>
+  
+    <!-- Enlaces de navegación -->
+    <div class="nav-links">
+      <a mat-button routerLink="/calendario">Calendario</a>
+      <a mat-button routerLink="/reservaciones">Reservaciones</a>
+      <a mat-button routerLink="/check-in">Check-In</a>
+      <a mat-button routerLink="/registro-pagos">Registro de Pagos</a>
+      <a mat-button routerLink="/perfil-clientes">Perfil de Clientes</a>
+    </div>
+  
+    <!-- Espaciador -->
+    <span class="spacer"></span>
+  
+    <!-- Botón de cerrar sesión -->
+    <button class="cerrarSesion" mat-stroked-button color="primary" (click)="cerrarSesion()">Cerrar Sesión</button>
+  </mat-toolbar>
