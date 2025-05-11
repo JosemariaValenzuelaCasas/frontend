@@ -1,0 +1,19 @@
+<p>user-detail works!</p>
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Detalles del Usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Nombre:</strong> {{ user?.username }}</p>
+        <p><strong>Apellido:</strong> {{ user?.password }}</p>
+        <p><strong>Correo:</strong> {{ user?.email }}</p>
+        <p><strong>Rol:</strong> {{ user?.role | roleName }}</p>
+        <p><strong>Estado:</strong> {{ user?.status }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/users/edit', user?.id]">Editar</button>
+        <button mat-raised-button color="accent" [routerLink]="['/users']">Volver</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
