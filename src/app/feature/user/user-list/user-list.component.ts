@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-user-list',
   standalone: true,
@@ -19,10 +19,58 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./user-list.component.scss'],
   
 })
-export class UserListComponent  {
-  displayedColumns: string[] = ['idRoom', 'roomType', 'capacity','floor','description','dateMaintenance', 'roomStatus']; // columnas que mostrarás
-  dataSource = new MatTableDataSource([
-    { idRoom: 1, roomType: 'Matrimonial', capacity: 2, floor:2,description:'Habitacion pequeña', dateMaintenance:'2025-05-04',roomStatus:'Disponible' },
-    { idRoom: 2, roomType: 'Familiar', capacity: 5,floor:1,description:'Habitacion Grande', dateMaintenance:'2025-04-04',roomStatus:'Ocupada'  }
-  ]);
+export class UserListComponent implements OnInit {
+  users: User[] = [];
+  displayedColumns: string[] = ['username', 'password', 'email', 'role','status','actions'];
+  errorMessage: string | null = null;
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.userService.getUsers().subscribe({
+      next: (data) => {
+        this.users = data;
+        this.errorMessage = null;
+        console.log('Users loaded:', data);
+      },
+      error: (error) => {
+        this.errorMessage = `Error loading users: ${error.message}`;
+        console.error('Error loading users:', error);
+      }
+    });
+  }
+
+  deleteUser(id: number): void {
+    this.userService.deleteUser(id).subscribe({
+      next: () => {
+        const user = this.users.find(u => u.id === id);
+        if (user) {
+          user.status = 'I'; 
+        }
+        this.errorMessage = null;
+      },
+      error: (error) => {
+        this.errorMessage = `Error deleting user: ${error.message}`;
+        console.error('Error deleting user:', error);
+      }
+    });
+  }
+
+  restoreUser(id: number): void {
+    this.userService.restoreUser(id).subscribe({
+      next: () => {
+        const user = this.users.find(u => u.id === id);
+        if (user) user.status = 'A';
+        this.errorMessage = null;
+      },
+      error: (error) => {
+        this.errorMessage = `Error deleting user: ${error.message}`;
+        console.error('Error deleting user:', error);
+      }
+    });
+  }
 }

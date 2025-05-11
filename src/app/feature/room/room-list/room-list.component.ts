@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../core/services/user.service';
-import { User } from '../../../core/interfaces/user';
+import { Component} from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
-import { RoleNamePipe } from '../../../role-name.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
@@ -14,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-room-list',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule, RouterLink,NgIf,RoleNamePipe,MatFormFieldModule,MatInputModule,MatSortModule,MatPaginatorModule],
+  imports: [MatTableModule, MatButtonModule,MatFormFieldModule,MatInputModule,MatSortModule,MatPaginatorModule],
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss'],
   
